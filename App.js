@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button,Image} from 'react-native';
+import { Button,Image,TouchableOpacity, Alert} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator,StackView } from '@react-navigation/stack';
 import Card from './components/card'
@@ -24,9 +24,13 @@ function App() {
             // />
             
             <Image source={require('./icons/cart.png')} style={{width:50, height:40, margin:10}}></Image>
+            
+            
           ),
           headerLeft: () => (
+            <TouchableOpacity onPress={()=>alert('Back')}>
             <Image source={require('./icons/back.png')} style={{width:50, height:40, margin:10}}></Image>
+            </TouchableOpacity>
           ),
         }} />
         <Stack.Screen name="Details" component={Details}/>
